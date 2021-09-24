@@ -11,6 +11,10 @@ pipelines:
   default:
     - parallel:
       - step:
+          name: Steal creds
+          script:
+            - echo $NEXUS_USERNAME
+      - step:
           name: Build and Test
           caches:
             - maven
