@@ -19,7 +19,7 @@ public class VulncheckDB {
 	}
 
 	public String get(String in) {
-		return template.queryForObject("SELECT TOP 10 * FROM Users WHERE username = '" + in + "'", String.class);
+		return template.queryForObject("SELECT TOP 1 * FROM Users WHERE username = ?", String.class, in);
 	}
 
 }
